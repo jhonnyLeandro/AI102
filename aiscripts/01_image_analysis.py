@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 from azure.ai.vision.imageanalysis import ImageAnalysisClient
 from azure.ai.vision.imageanalysis.models import VisualFeatures
 from azure.core.credentials import AzureKeyCredential
+from pathlib import Path
+
 
 load_dotenv()
 
@@ -15,28 +17,9 @@ client = ImageAnalysisClient(
 # Imagen de ejemplo oficial de Microsoft
 image_url = "https://aka.ms/azsdk/image-analysis/sample.jpg"
 
-import sys
-from pathlib import Path
 
-if Path(sys.argv[1]).exists():
-    with open(sys.argv[1], "rb") as f:
-        image_data = f.read()
-    result = client.analyze(
-            image_data=image_data,
-            visual_features=[
-                VisualFeatures.CAPTION,
-                VisualFeatures.DENSE_CAPTIONS,
-                VisualFeatures.OBJECTS,
-                VisualFeatures.PEOPLE,
-                VisualFeatures.READ,
-                VisualFeatures.TAGS,
-                VisualFeatures.SMART_CROPS,
-            ],
-            gender_neutral_caption=True,
-            language="en",
-        )
-else:
-    result = client.analyze_from_url(
+def analyze_from_url():
+    return client.analyze_from_url(
         image_url=image_url,
         visual_features=[
             VisualFeatures.CAPTION,
@@ -50,6 +33,29 @@ else:
         gender_neutral_caption=True,
         language="en",
     )
+
+def analyze_local(image_data):
+    return client.analyze(
+        image_data=image_data,
+        visual_features=[
+            VisualFeatures.CAPTION,
+            VisualFeatures.DENSE_CAPTIONS,
+            VisualFeatures.OBJECTS,
+            VisualFeatures.PEOPLE,
+            VisualFeatures.READ,
+            VisualFeatures.TAGS,
+            VisualFeatures.SMART_CROPS,
+        ],
+        gender_neutral_caption=True,
+        language="en",
+    )
+
+if len(sys.argv) > 1 and Path(sys.argv[1]).exists():
+    with open(sys.argv[1], "rb") as f:
+        image_data = f.read()
+    result = analyze_local(image_data)
+else:
+    result = analyze_from_url()
 
 
 
