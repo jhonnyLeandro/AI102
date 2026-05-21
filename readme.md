@@ -62,7 +62,7 @@ az group create
 --name rg-ai102-study `
 --location eastus
 ```
-*Create a multiservice cognitiveservice account *
+*Create a multiservice cognitiveservice account*
 
 ```
 az cognitiveservices account create `
@@ -74,7 +74,7 @@ az cognitiveservices account create `
   --yes
 ```
 
-*create a .env file and add endpoint and key *
+*create a .env file and add endpoint and key*
 
 *.env*
 ```
