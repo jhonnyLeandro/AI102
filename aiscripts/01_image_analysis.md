@@ -1,5 +1,5 @@
 
-### Imaga analysis exercise
+### Image analysis exercise
 
 *login to azure with azure cli and create a resource group*
 
