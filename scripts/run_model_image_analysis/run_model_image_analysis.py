@@ -19,7 +19,7 @@ client = AzureOpenAI(
 # reading the image to send into the model
 
 image=input("entra el nombre de la imagen (leon, CasaSevilla, me) \n")
-image_path = Path(__file__).parent.parent / "images" / f"{image}.jpg "
+image_path = Path(__file__).parent.parent.parent / "images" / f"{image}.jpg "
 
 mime = mimetypes.guess_type(image_path)[0] or "image/jpeg"
 b64 = base64.b64encode(image_path.read_bytes()).decode("utf-8")
