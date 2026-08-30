@@ -13,8 +13,6 @@ client = OpenAI(
     default_headers={"x-ms-oai-image-generation-deployment": "gpt-image-1-mini"},
 )
 
-
-
 prompt = input("Ingresa que imagen quieres crear \n")
 
 response = client.responses.create(
