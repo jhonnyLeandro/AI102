@@ -16,6 +16,6 @@ Deploy Model if there is not an instance
 python ./scripts/run_model_image_analysis/run_model_image_analysis.py
 ```
 
-Expecte result should look like this if option selected is "leon"
+Expected result should look like this if option selected is "leon"
 
 ![Alt Text](../../mdimages/resultado01.png)
