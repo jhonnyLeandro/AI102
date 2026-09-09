@@ -18,12 +18,12 @@ Deploy Model gpt-image-1-mini
 python ./scripts/run_model_image_analysis/run_model_image_generation.py
 ```
 
-Expected result should look like this if option selected is "leon"
+Expected result should look like this
 
 ![Alt Text](../../mdimages/resultado02.png)
 
 
-Image was creted in the folder structure
+Image was created in the folder structure
 
 ![Alt Text](../../mdimages/imagengenerada.png)
 
