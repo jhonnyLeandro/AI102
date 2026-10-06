@@ -61,6 +61,11 @@ python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+### Create .env file and add
+
+AZURE_OPENAI_ENDPOINT=<AZURE_OPENAI_ENDPOINT>
+AZURE_OPENAI_API_KEY=<AZURE_OPENAI_API_KEY>
+
 [How to execute image analysis exercise](aiscripts/01_image_analysis.md)
 
 
