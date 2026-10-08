@@ -7,6 +7,8 @@ In the azure portal and select Create a Resource and search for "language servic
 ![Alt Text](../mdimages/language_service_01.png)
 
 
+
+
 Enter the values and  create the resource
 
 ![Alt Text](../mdimages/language_service_02.png)
@@ -14,7 +16,15 @@ Enter the values and  create the resource
 
 ## Create Language Service Endpoint Variable and Key in .env file
 
+Go to language Service Resource and copy the endpoint and add it to the .env file, go to keys and endpoint and copy the key and update it in the .env file
+
 ```
 LANGUAGE_ENDPOINT="<endpoint>"
 LANGUAGE_KEY="<key from ai-resrce>"
+```
+  
+## Execute the script
+
+```
+ python ./run_model/pii_exercise.py
 ```
