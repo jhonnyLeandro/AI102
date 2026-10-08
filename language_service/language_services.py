@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-key = os.environ["API_KEY"]
-endpoint = "https://ai-resrce.cognitiveservices.azure.com/"
+key = os.environ["LANGUAGE_SERVICE_KEY"]
+endpoint = os.environ["LANGUAGE_SERVICE_ENDPOINT"] 
     
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
