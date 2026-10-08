@@ -12,10 +12,17 @@ Deploy Model gpt-image-1-mini
 
 ![Alt Text](../../mdimages/desplegarmodeloGI.png)
 
+
+## Create Image Generation Model Env Variable
+
+```
+IMAGE_GENERATION_MODEL="MODEL_GENERATION_NAME"
+```
+
 ## Excute Script
 
 ```
-python ./scripts/run_model_image_analysis/run_model_image_generation.py
+ python ./scripts/run_model_image_generation/run_model_image_generation.py
 ```
 
 Expected result should look like this

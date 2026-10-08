@@ -6,17 +6,20 @@ from dotenv import load_dotenv
 # load env variables
 load_dotenv()
 
+# get image generation model name
+imageModel = os.environ["IMAGE_GENERATION_MODEL"]
+
 # authenticate the client
 client = OpenAI(
-    api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    api_key=os.environ["API_KEY"],
     base_url=os.environ["AZURE_OPENAI_ENDPOINT"].rstrip("/") + "/openai/v1/",
-    default_headers={"x-ms-oai-image-generation-deployment": "gpt-image-1-mini"},
+    default_headers={"x-ms-oai-image-generation-deployment": imageModel},
 )
 
 prompt = input("Ingresa que imagen quieres crear \n")
 
 response = client.responses.create(
-    model= "gpt-4.1-mini",  # your deployment name in Foundry
+    model= os.getenv("MODEL_DEPLOYMENT_NAME"),  # your deployment name in Foundry
     input=prompt,
     tools=[{"type": "image_generation"}],
 )
