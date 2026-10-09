@@ -6,8 +6,8 @@ from azure.ai.textanalytics import TextAnalyticsClient
 
 # Load environment variables from .env file
 load_dotenv()
-endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
-key = os.environ["AZURE_OPENAI_API_KEY"]
+endpoint = os.environ["LANGUAGE_SERVICE_ENDPOINT"]
+key = os.environ["LANGUAGE_SERVICE_KEY"]
 
 # Create the client
 client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))

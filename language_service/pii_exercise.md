@@ -30,8 +30,15 @@ LANGUAGE_KEY="<key from ai-resrce>"
 ```
 
 
-## Execute Language Sentiment script
+## Execute AI query scripot
 
 ```
- python ./language_service/run_language_example.py
+ python ./language_service/run_query_example.py
+```
+
+
+## Execute Language detection script
+
+```
+python ./language_service/run_language_detection.py
 ```
