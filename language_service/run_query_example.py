@@ -4,8 +4,8 @@ from openai import AzureOpenAI
 
 # Load environment variables from .env file
 load_dotenv()
-endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
-api_key = os.environ["AZURE_OPENAI_API_KEY"]
+endpoint = os.environ["BASE_OPENAI_ENDPOINT"] + os.environ["AZURE_OPENAI_ENDPOINT"] 
+api_key = os.environ["API_KEY"]
 deployment_name = os.environ["MODEL_DEPLOYMENT_NAME"]
 
 # Create the client object
@@ -18,7 +18,7 @@ client = AzureOpenAI(
 # Make a request using the client
 message = client.responses.create(
     model=deployment_name,
-    input="",
+    input="En que me puedes ayudar?",
 )
 
 # Print the results

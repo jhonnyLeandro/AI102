@@ -61,11 +61,20 @@ python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+
+
+### Create Foundry Project
+
+[Create a foundry project](https://learn.microsoft.com/en-us/azure/foundry/how-to/create-projects?tabs=foundry)
+
+
 ### Create .env file and add
 
 
 ```
-AZURE_OPENAI_ENDPOINT=<AZURE_OPENAI_ENDPOINT>
+PROJECT_ENDPOINT="https://<project-name>-resource.services.ai.azure.com/api/projects/<project-name>"
+BASE_OPENAI_ENDPOINT="https://XXXX-resource.openai.azure.com"
+AZURE_OPENAI_ENDPOINT="/openai/v1/"
 AZURE_OPENAI_API_KEY=<AZURE_OPENAI_API_KEY>
 MODEL_DEPLOYMENT_NAME=<MODEL_DEPLOYMENT_NAME>
 ```

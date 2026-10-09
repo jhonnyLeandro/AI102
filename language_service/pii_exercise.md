@@ -23,8 +23,15 @@ LANGUAGE_ENDPOINT="<endpoint>"
 LANGUAGE_KEY="<key from ai-resrce>"
 ```
   
-## Execute the script
+## Execute the PII Script
 
 ```
  python ./run_model/pii_exercise.py
+```
+
+
+## Execute Language Sentiment script
+
+```
+ python ./language_service/run_language_example.py
 ```
