@@ -73,7 +73,7 @@ pip install -r requirements.txt
 
 ```
 PROJECT_ENDPOINT="https://<project-name>-resource.services.ai.azure.com/api/projects/<project-name>"
-BASE_OPENAI_ENDPOINT="https://XXXX-resource.openai.azure.com"
+BASE_OPENAI_ENDPOINT="https://<project-name>-resource.openai.azure.com"
 AZURE_OPENAI_ENDPOINT="/openai/v1/"
 AZURE_OPENAI_API_KEY=<AZURE_OPENAI_API_KEY>
 MODEL_DEPLOYMENT_NAME=<MODEL_DEPLOYMENT_NAME>
