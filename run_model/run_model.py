@@ -3,14 +3,13 @@ from dotenv import load_dotenv
 from openai import AzureOpenAI
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
-
-deployment_name = "gpt-4.1-mini"
-
 load_dotenv()
 
+deployment_name = os.environ["MODEL_DEPLOYMENT_NAME"] 
+
 client = AzureOpenAI(
-    azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
-    api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    azure_endpoint = os.environ["BASE_OPENAI_ENDPOINT"],
+    api_key = os.environ["API_KEY"],
     api_version="2025-03-01-preview",
 )
 

@@ -12,8 +12,8 @@ project_client = AIProjectClient(
     credential=DefaultAzureCredential(),
 )
 
-my_agent = "expenses-agent"
-my_version = "2"
+my_agent = os.environ["AGENT_NAME"]     
+my_version = os.environ["AGENT_VERSION"]  
 
 openai_client = project_client.get_openai_client()
 

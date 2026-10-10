@@ -10,8 +10,8 @@ from pathlib import Path
 load_dotenv()
 
 client = ImageAnalysisClient(
-    endpoint=os.environ["AZURE_AI_ENDPOINT"],
-    credential=AzureKeyCredential(os.environ["AZURE_AI_KEY"])
+    endpoint=os.environ["BASE_OPENAI_ENDPOINT"],
+    credential=AzureKeyCredential(os.environ["API_KEY"])
 )
 
 # Imagen de ejemplo oficial de Microsoft
@@ -22,8 +22,8 @@ def analyze_from_url():
     return client.analyze_from_url(
         image_url=image_url,
         visual_features=[
-            VisualFeatures.CAPTION,
-            VisualFeatures.DENSE_CAPTIONS,
+           # VisualFeatures.CAPTION,
+           # VisualFeatures.DENSE_CAPTIONS,
             VisualFeatures.OBJECTS,
             VisualFeatures.PEOPLE,
             VisualFeatures.READ,
