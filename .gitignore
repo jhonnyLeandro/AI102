@@ -2,4 +2,4 @@
 .venv/
 __pycache__/
 foundry_generated.png
-
+servicePrincipal.json

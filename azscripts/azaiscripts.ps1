@@ -1,14 +1,15 @@
+$creds = Get-Content -Raw (Join-Path $PSScriptRoot "..\servicePrincipal.json") | ConvertFrom-Json
 
-# login 
-az login --use-device-code
+# login
+az login --service-principal --username $creds.appId --password $creds.password --tenant $creds.tenant
 
 # create a resource group
-az group create --name rg-ai102-study --location eastus
+az group create --name rg-ai103-study --location eastus
 
 # create a cognitiveservices account
 az cognitiveservices account create `
-  --name ai102-multiservice `
-  --resource-group rg-ai102-study `
+  --name ai103-multiservice `
+  --resource-group rg-ai103-study `
   --kind CognitiveServices `
   --sku S0 `
   --location eastus `
@@ -17,12 +18,12 @@ az cognitiveservices account create `
 
 # Endpoint
 az cognitiveservices account show `
-  --name ai102-multiservice `
-  --resource-group rg-ai102-study `
+  --name ai103-multiservice `
+  --resource-group rg-ai103-study `
   --query properties.endpoint -o tsv
 
 # Key
 az cognitiveservices account keys list `
-  --name ai102-multiservice `
-  --resource-group rg-ai102-study `
-  --query key1 -o tsv
+  --name ai103-multiservice `
+  --resource-group rg-ai103-study `
+  --query key1 -o tsv 
