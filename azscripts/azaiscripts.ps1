@@ -1,7 +1,6 @@
-$creds = Get-Content -Raw (Join-Path $PSScriptRoot "..\servicePrincipal.json") | ConvertFrom-Json
-
-# login
-az login --service-principal --username $creds.appId --password $creds.password --tenant $creds.tenant
+# login with service principal
+. "$PSScriptRoot\readenv.ps1"
+. "$PSScriptRoot\loginserviceprincipal.ps1"
 
 # create a resource group
 az group create --name rg-ai103-study --location eastus
