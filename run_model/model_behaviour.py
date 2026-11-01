@@ -1,0 +1,29 @@
+import os
+from dotenv import load_dotenv
+from openai import AzureOpenAI
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+
+load_dotenv()
+
+deployment_name = os.environ["MODEL_DEPLOYMENT_NAME"] 
+
+client = AzureOpenAI(
+    azure_endpoint = os.environ["BASE_OPENAI_ENDPOINT"],
+    api_key = os.environ["API_KEY"],
+    api_version="2025-03-01-preview",
+)
+
+
+response = client.responses.create(
+    model=deployment_name,
+    instructions="""
+        You are a helpful AI assistant who supports employees with expense claims.
+        Provide concise, accurate information only on topics related to expenses.
+        Do not provide any information about topics that are not directly related to expenses.
+    """,
+    input="What kinds of business expense are typically reimbursed by employers?",
+    #max_output_tokens=500
+    temperature=2
+)
+
+print(response.output_text)
