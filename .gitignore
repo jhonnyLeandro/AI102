@@ -3,3 +3,5 @@
 __pycache__/
 foundry_generated.png
 servicePrincipal.json
+rgdata.json
+.vscode/
